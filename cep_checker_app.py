@@ -39,7 +39,7 @@ def index():
         
         try:
             # Fazendo a requisição GET à API com o CEP
-            response = requests.get(url, proxies=proxy)
+            response = requests.get(url)
             if response.status_code == 200:
                 # Se a resposta for bem-sucedida, renderizamos os dados
                 data = response.json()
