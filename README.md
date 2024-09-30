@@ -21,7 +21,7 @@ cep_checker/
 ├── templates/
 │   └── index.html
 │
-├── app.py
+├── cep_checker_app.py
 └── README.md
 ```
 
@@ -34,7 +34,7 @@ cep_checker/
    ```
 3. Execute a aplicação Flask:
    ```bash
-   python app.py
+   python cep_checker_app.py
    ```
 4. Acesse a aplicação no navegador em: `http://127.0.0.1:5000`
 
