@@ -58,4 +58,4 @@ def index():
 
 if __name__ == "__main__":
     # Executa a aplicação Flask no modo de depuração
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
