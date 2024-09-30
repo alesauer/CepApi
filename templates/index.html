@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CEP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Consulta de CEP</h1>
+        <form method="POST" class="mt-4">
+            <div class="form-group">
+                <label for="cep">Digite o CEP:</label>
+                <input type="text" class="form-control" id="cep" name="cep" placeholder="Ex: 30770190" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Verificar</button>
+        </form>
+        {% if data %}
+        <div class="mt-4">
+            <h3>Informações do CEP:</h3>
+            <p><strong>CEP:</strong> {{ data['cep'] }}</p>
+            <p><strong>Logradouro:</strong> {{ data['logradouro'] }}</p>
+            <p><strong>Bairro:</strong> {{ data['bairro'] }}</p>
+            <p><strong>Cidade:</strong> {{ data['localidade'] }}</p>
+            <p><strong>Estado:</strong> {{ data['uf'] }}</p>
+        </div>
+        {% elif error %}
+        <div class="alert alert-danger mt-4">{{ error }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
